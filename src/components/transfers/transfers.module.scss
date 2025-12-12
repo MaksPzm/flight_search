@@ -1,0 +1,23 @@
+.formTransfers {
+    width: 272px;
+    height: 258px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    background-color: rgba(232, 235, 242, 1);
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    .formTransfers_title {
+        font: bold 20px "Inter", sans-serif;
+        margin: 19px auto 6px;
+    }
+    .formTransfers_label {
+        width: 165px;
+        font: 500 16px / 100% "Inter", sans-serif;
+        display: flex;
+        gap: 19px;
+        align-items: center;
+        color: rgba(133, 138, 227, 1);
+    }
+}

@@ -1,0 +1,46 @@
+$dataColor: rgba(78, 20, 140, 1);
+$infoColor: rgba(133, 138, 227, 1);
+$fontF: "Inter", sans-serif;
+.tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+    margin-top: 27px;
+}
+.ticket {
+    width: 727px;
+    height: 174px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    background-color: rgba(232, 235, 242, 1);
+    .ticket__article {
+        display: flex;
+        margin: 32px 43px 0 39px;
+        justify-content: space-between;
+        align-items: center;
+        .ticket__article_price {
+            color: $dataColor;
+            font: bold 32px $fontF;
+        }
+    }
+    .ticket__blockInfo {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 92px 25px 39px;
+        .ticket__blockInfo_section {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            .ticket__blockInfo_section_sp, .ticket__blockInfo_section_info {
+                font: 500 16px / 100% $fontF;
+                color: $infoColor;
+            }
+            .ticket__blockInfo_section_info {
+                color: $dataColor;
+            }
+        }
+    }
+}

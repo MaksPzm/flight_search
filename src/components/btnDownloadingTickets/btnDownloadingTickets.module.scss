@@ -1,0 +1,15 @@
+.btnDownloading {
+    width: 727px;
+    height: 62px;
+    background-color: rgba(78, 20, 140, 1);
+    color: rgba(247, 249, 247, 1);
+    border: none;
+    border-radius: 10px;
+    font: bold 24px "Inter", sans-serif;
+    cursor: pointer;
+}
+.btnDownloading:hover {
+    background-color: rgba(232, 235, 242, 1);
+    color: rgba(78, 20, 140, 1);
+    border: 1px solid rgba(78, 20, 140, 1);
+}

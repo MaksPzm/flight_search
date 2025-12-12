@@ -1,0 +1,49 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headline {
+    width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 34px;
+    .headline__title {
+        color: rgba(78, 20, 140, 1);
+        font-size: 24px;
+        font-family: Inter, sans-serif;
+    }
+}
+
+.wrapper {
+    width: 1060px;
+    margin: 20.55px auto 0;
+    display: flex;
+    gap: 50px;
+    .aside {
+        width: 272px;
+        color: rgba(78, 20, 140, 1);
+    }
+    .wrapper__main {
+        display: flex;
+        flex-direction: column;
+        gap: 74px;
+    }
+}
