@@ -19,5 +19,31 @@
         gap: 19px;
         align-items: center;
         color: rgba(133, 138, 227, 1);
+        position: relative;
+        .formTransfers_label_checked {
+            appearance: none;
+            margin: 0;
+            width: 15px;
+            height: 15px;
+            border: 1px solid rgba(78, 20, 140, 1);
+            border-radius: 3px;
+        }
+        .formTransfers_label_checked:checked {
+            background-color: rgba(232, 235, 242, 1);
+        }
+        .formTransfers_label_checked:checked:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 5px;
+            width: 3px;
+            height: 8px;
+            border: 2px solid transparent;
+            border-bottom-color: rgba(78, 20, 140, 1);
+            border-right-color: rgba(78, 20, 140, 1);
+            transform-origin: 50% 50%;
+            transform: rotate(35deg);
+        }
     }
 }

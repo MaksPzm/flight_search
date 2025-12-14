@@ -1,25 +1,34 @@
-import type {JSX} from "react";
+import {type JSX, useState} from "react";
 import styles from "./transfers.module.scss";
+import { checkedDefault } from "../defaultValues.ts";
+import { type CheckedDefault } from "../../type/type.ts";
+
+
 const Transfers = (): JSX.Element => {
+    const [checkeds, setCheckeds] = useState<CheckedDefault>(checkedDefault);
+    // @ts-ignore
+    const hadleInput = (position: number) => {
+        const updatedCheckedState = checkeds.map((item, index) =>
+            index === position ? !item.checked : item.checked
+        );
+        const newCheckeds = [...checkeds];
+        newCheckeds[position].checked = updatedCheckedState[position];
+        setCheckeds(newCheckeds)
+    }
     return (
-        <form action="" className={styles.formTransfers}>
-                <h3 className={styles.formTransfers_title}>Количество пересадок</h3>
-                <label htmlFor="withoutTransfers" className={styles.formTransfers_label}>
-                    <input type="checkbox" checked={true} id="withoutTransfers" className={styles.formTransfers_label_checked}/>
-                    Без пересадок
-                </label>
-                <label htmlFor="1Transfer" className={styles.formTransfers_label}>
-                    <input type="checkbox"  id="1Transfer" className={styles.formTransfers_label_checked}/>
-                    1 пересадка
-                </label>
-                <label htmlFor="2Transfer" className={styles.formTransfers_label}>
-                    <input type="checkbox" id="2Transfer" className={styles.formTransfers_label_checked}/>
-                    2 пересадки
-                </label>
-                <label htmlFor="3Transfer" className={styles.formTransfers_label}>
-                    <input type="checkbox" id="3Transfer" className={styles.formTransfers_label_checked}/>
-                    3 пересадки
-                </label>
+        <form className={styles.formTransfers}>
+            <h3 className={styles.formTransfers_title}>Количество пересадок</h3>
+            {
+                checkeds.map((checked, index) => (
+                    <label key={checked.id} htmlFor={checked.id} className={styles.formTransfers_label}
+                           onChange={() => hadleInput(index)}>
+                        <input type="checkbox" defaultChecked={checked.checked} id={checked.id}
+                               className={styles.formTransfers_label_checked}
+                        />
+                        { checked.data }
+                    </label>
+                ))
+            }
         </form>
     );
 };

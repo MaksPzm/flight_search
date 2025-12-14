@@ -38,23 +38,24 @@ const dataSlice = createSlice({
             return state.data;
         },
     },
-    extraReducers: {
-        // //когда происходит загрузка
-        // [fetchTickets.pending]: (state: any) => {
-        //     state.status = "loading";
-        //     state.error = null;
-        // },
-        // //когда успешно получены данные
-        // [fetchTickets.fulfilled]: (state: any, action: any) => {
-        //     state.status = "resolve";
-        //     state.data = action.payload;
-        // },
-        // // когда какая то ошибка
-        // [fetchTickets.rejected]: (state: any, action: any) => {
-        //     state.status = "rejected";
-        //     state.error = action.payload;
-        // }
-    } as any
+    extraReducers: (builder) => {
+        builder
+        //когда происходит загрузка
+        .addCase(fetchTickets.pending, (state: any) => {
+            state.status = "loading";
+            state.error = null;
+        })
+        //когда успешно получены данные
+        .addCase(fetchTickets.fulfilled, (state: any, action: any) => {
+            state.status = "resolve";
+            state.data = action.payload;
+        })
+        // когда какая то ошибка
+        .addCase(fetchTickets.rejected, (state: any, action: any) => {
+            state.status = "rejected";
+            state.error = action.payload;
+        })
+    }
 })
 
 export const {chep, fast, optimal} = dataSlice.actions;

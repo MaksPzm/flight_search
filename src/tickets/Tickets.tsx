@@ -13,7 +13,7 @@ export const Tickets = (props: TicketsPropsComponent): JSX.Element => {
                 valueStore[0].map(ticket => (
                     <div key={ticket.id} id={`${ticket.id}`} className={`${className} ${styles.ticket}`}>
                         <div className={styles.ticket__article}>
-                            <span className={styles.ticket__article_price}>{`${ticket.price} Р`}</span>
+                            <span className={styles.ticket__article_price}>{`${ticket.price >= 1000 ? (ticket.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")) : (ticket.price)} Р`}</span>
                             <img className={styles.ticket__article_img} src={ticket.icon} alt="icon"/>
                         </div>
                         <div className={styles.ticket__blockInfo}>

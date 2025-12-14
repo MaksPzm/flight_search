@@ -38,7 +38,7 @@ export const defaultState = {
         { "id": 3,
             "from": 28000,
             "to": 29000,
-            "company": "Airlines",
+            "company": "S7 Airlines",
             "price": 28100,
             "currency": "RUB",
             "time": "14:20 - 16:10",

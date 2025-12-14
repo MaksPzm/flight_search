@@ -1,0 +1,50 @@
+.companyFilter {
+    width: 272px;
+    height: 198px;
+    background-color: rgba(232, 235, 242, 1);
+    border-radius: 10px;
+    .companyFilter__title {
+        font: bold 20px/100% "Inter", sans-serif;
+        margin: 0;
+        padding-top: 19px;
+        padding-left: 19px;
+    }
+    .companyFilter__company {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        margin-top: 27px;
+        margin-left: 45px;
+        .companyFilter__company_label {
+            color: rgba(133, 138, 227, 1);
+            font: 500 16px/100% "Inter", sans-serif;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            gap: 22px;
+            .companyFilter__company_label_checked {
+                appearance: none;
+                margin: 0;
+                width: 16px;
+                height: 16px;
+                border: 1px solid rgba(78, 20, 140, 1);
+                border-radius: 50%;
+            }
+            .companyFilter__company_label_checked:checked {
+                background-color: rgba(232, 235, 242, 1);
+            }
+            .companyFilter__company_label_checked:checked:before {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 2px;
+                left: 2px;
+                width: 12px;
+                height: 12px;
+                background-color: rgba(78, 20, 140, 1);
+                border-radius: 50%;
+            }
+        }
+    }
+}

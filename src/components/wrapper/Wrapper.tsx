@@ -11,7 +11,7 @@ export const Wrapper = (): JSX.Element => {
             <div className="wrapper__main">
                 <FilterButtons />
                 <Tickets className={"tickets"}/>
-                <BtnDownloadingTickets />
+                <BtnDownloadingTickets className={"btnDownloading"} />
             </div>
         </div>
     );
